@@ -99,7 +99,7 @@ class Request implements RequestInterface, InjectionAwareInterface
 	 *	$userEmail = $request->getPost("user_email", "email");
 	 *</code>
 	 */
-	public function getPost(string! name = null, var filters = null, var defaultValue = null, boolean notAllowEmpty = false, boolean noRecursive = false) -> var
+	public function getPost(string! name = null, var filters = "striptags", var defaultValue = null, boolean notAllowEmpty = false, boolean noRecursive = false) -> var
 	{
 		return this->getHelper(_POST, name, filters, defaultValue, notAllowEmpty, noRecursive);
 	}
@@ -146,7 +146,7 @@ class Request implements RequestInterface, InjectionAwareInterface
 	 *	$id = $request->getQuery("id", null, 150);
 	 *</code>
 	 */
-	public function getQuery(string! name = null, var filters = null, var defaultValue = null, boolean notAllowEmpty = false, boolean noRecursive = false) -> var
+	public function getQuery(string! name = null, var filters = "striptags", var defaultValue = null, boolean notAllowEmpty = false, boolean noRecursive = false) -> var
 	{
 		return this->getHelper(_GET, name, filters, defaultValue, notAllowEmpty, noRecursive);
 	}
